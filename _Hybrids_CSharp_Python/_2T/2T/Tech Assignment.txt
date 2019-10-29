@@ -1,0 +1,16 @@
+
+Write a program (using C#) to consume county data csv file. 
+
+Model a DynamoDB table to store the contents of the csv file. (done)
+
+Clients need to be able to filter the data by:
+-- all data for a specified state
+-- all data for a specified state and county
+Parse the csv file (attached) and import it into a DynamoDB table. ( Done)
+Write a function to consume the data for a state from the DynamoDB table.
+According to the data dictionary, the following fields contain the percentage of people that meet that criteria:
+-- EDU685213 - Bachelor's degree or higher, percent of persons age 25+, 2009-2013
+-- POP815213 - Language other than English spoken at home, pct age 5+, 2009-2013
+Summarize the results to sum the number of counties that have a "Bachelor's degree or higher" 
+by "Language other than English spoken at home" such that they are cross tabulated for every 10th 
+percentile on each axis.

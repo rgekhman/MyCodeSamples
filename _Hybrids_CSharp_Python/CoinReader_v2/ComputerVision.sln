@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "python_scripts", "main\python_scripts.pyproj", "{32D5CA0A-B926-4E76-B5DB-C9ACA68C0FB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp_client", "Client\csharp_client.csproj", "{79B81B2E-683E-44F8-8324-FA9C57323008}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32D5CA0A-B926-4E76-B5DB-C9ACA68C0FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D5CA0A-B926-4E76-B5DB-C9ACA68C0FB0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{32D5CA0A-B926-4E76-B5DB-C9ACA68C0FB0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{32D5CA0A-B926-4E76-B5DB-C9ACA68C0FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D5CA0A-B926-4E76-B5DB-C9ACA68C0FB0}.Release|x64.ActiveCfg = Release|Any CPU
+		{32D5CA0A-B926-4E76-B5DB-C9ACA68C0FB0}.Release|x86.ActiveCfg = Release|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Debug|x64.Build.0 = Debug|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Debug|x86.Build.0 = Debug|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Release|x64.ActiveCfg = Release|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Release|x64.Build.0 = Release|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Release|x86.ActiveCfg = Release|Any CPU
+		{79B81B2E-683E-44F8-8324-FA9C57323008}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C05BC1C6-2BD9-45AF-BC2F-7EAD715B3C8F}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://rgekhman.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = main\\python_scripts.pyproj
+		SccProjectName1 = main
+		SccLocalPath1 = main
+		SccProjectUniqueName2 = Client\\csharp_client.csproj
+		SccProjectName2 = Client
+		SccLocalPath2 = Client
+	EndGlobalSection
+EndGlobal

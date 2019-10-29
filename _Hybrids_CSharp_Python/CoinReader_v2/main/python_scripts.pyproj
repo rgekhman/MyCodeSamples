@@ -1,0 +1,162 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>32d5ca0a-b926-4e76-b5db-c9aca68c0fb0</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>perform_sift_matching.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>python_scripts</Name>
+    <RootNamespace>main</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>--denomination 25 --filename 25_1935_2.jpg</CommandLineArguments>
+    <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="1.01.py" />
+    <Compile Include="1.02 transformations.py" />
+    <Compile Include="1.03 perform pca %28not working%29.py" />
+    <Compile Include="1.04 filters and convolutions.py" />
+    <Compile Include="build_all_descriptors_main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="perform_sift_matching.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sift.py" />
+    <Compile Include="sift_build_single_descriptor.py" />
+    <Compile Include="sift_build_descriptors.py" />
+    <Compile Include="vocabulary.py" />
+    <Compile Include="_lib\imtools.py" />
+    <Compile Include="_lib\pca.py" />
+    <Compile Include="_lib\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_docs\" />
+    <Folder Include="_img\" />
+    <Folder Include="_img\_models\" />
+    <Folder Include="_img\_models\_01\" />
+    <Folder Include="_img\_models\_05\" />
+    <Folder Include="_img\_models\_10\" />
+    <Folder Include="_img\_models\_10\_features\" />
+    <Folder Include="_img\_models\_10\_sift\" />
+    <Folder Include="_img\_models\_25\" />
+    <Folder Include="_img\_scenes\" />
+    <Folder Include="_img\_scenes\_01\" />
+    <Folder Include="_img\_scenes\_01\_features\" />
+    <Folder Include="_img\_scenes\_01\_sift\" />
+    <Folder Include="_img\_scenes\_05\" />
+    <Folder Include="_img\_scenes\_05\_features\" />
+    <Folder Include="_img\_scenes\_05\_sift\" />
+    <Folder Include="_img\_scenes\_10\" />
+    <Folder Include="_img\_scenes\_10\_features\" />
+    <Folder Include="_img\_scenes\_10\_sift\" />
+    <Folder Include="_img\_scenes\_25\" />
+    <Folder Include="_lib\" />
+    <Folder Include="_results\" />
+    <Folder Include="_results\_sift_training\" />
+    <Folder Include="_results\_1_1\" />
+    <Folder Include="_VLFeat\" />
+    <Folder Include="_VLFeat\bin\" />
+    <Folder Include="_VLFeat\bin\0.9.4.1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_docs\Coin Sorting Machine - First phase proposal v 1.00.docx" />
+    <Content Include="_docs\Coin Sorting Machine - First phase proposal v 1.01.docx" />
+    <Content Include="_docs\Image Recog techniques with TensorFlow.txt" />
+    <Content Include="_docs\numba installation.txt" />
+    <Content Include="_docs\ProgrammingComputerVision_CCdraft.pdf" />
+    <Content Include="_img\tot.jpg" />
+    <Content Include="_img\totoro.jpeg" />
+    <Content Include="_img\_models\_01\01_001_2.JPG" />
+    <Content Include="_img\_models\_01\01_002_1.JPG" />
+    <Content Include="_img\_models\_01\01_002_2.JPG" />
+    <Content Include="_img\_models\_05\05_001_2.jpg" />
+    <Content Include="_img\_models\_10\10_001_1.jpg" />
+    <Content Include="_img\_models\_10\10_001_2.jpg" />
+    <Content Include="_img\_models\_10\_features\10_001_1.png" />
+    <Content Include="_img\_models\_10\_sift\10_001_1.sift" />
+    <Content Include="_img\_models\_25\25_1932_2.jpg" />
+    <Content Include="_img\_models\_25\25_1935_2.jpg" />
+    <Content Include="_img\_models\_25\25_1938_2.jpg" />
+    <Content Include="_img\_models\_25\25_1940_2.jpg" />
+    <Content Include="_img\_models\_25\25_1941_2.jpg" />
+    <Content Include="_img\_models\_25\25_1956_2.jpg" />
+    <Content Include="_img\_models\_25\25_1962_2.jpg" />
+    <Content Include="_img\_models\_25\25_9999_1.jpg" />
+    <Content Include="_img\_models\_25\25_9999_2.jpg" />
+    <Content Include="_img\_scenes\_01\01_001_2.JPG" />
+    <Content Include="_img\_scenes\_01\01_002_1.JPG" />
+    <Content Include="_img\_scenes\_01\01_002_2.JPG" />
+    <Content Include="_img\_scenes\_01\_features\01_001_2.png" />
+    <Content Include="_img\_scenes\_01\_features\01_002_1.png" />
+    <Content Include="_img\_scenes\_01\_features\01_002_2.png" />
+    <Content Include="_img\_scenes\_01\_sift\01_001_2.sift" />
+    <Content Include="_img\_scenes\_01\_sift\01_002_1.sift" />
+    <Content Include="_img\_scenes\_01\_sift\01_002_2.sift" />
+    <Content Include="_img\_scenes\_25\25_001_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_1932_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_1935_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_1938_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_1940_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_1941_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_1941_2_01.jpg" />
+    <Content Include="_img\_scenes\_25\25_1941_2_02.jpg" />
+    <Content Include="_img\_scenes\_25\25_1942_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_1944_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_1956_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_1962_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_1964_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_9999_1.jpg" />
+    <Content Include="_img\_scenes\_25\25_9999_2.jpg" />
+    <Content Include="_img\_scenes\_25\25_9999_3.jpg" />
+    <Content Include="_results\_1_1\1.JPG" />
+    <Content Include="_results\_1_1\2.JPG" />
+    <Content Include="_results\_1_1\3.JPG" />
+    <Content Include="_results\_1_1\4.JPG" />
+    <Content Include="_results\_1_1\5.JPG" />
+    <Content Include="_results\_sift_training\001. trained on home laptop with hdd.JPG" />
+    <Content Include="_VLFeat\bin\0.9.4.1\aib.exe" />
+    <Content Include="_VLFeat\bin\0.9.4.1\Microsoft.VC90.CRT.manifest" />
+    <Content Include="_VLFeat\bin\0.9.4.1\mser.exe" />
+    <Content Include="_VLFeat\bin\0.9.4.1\msvcm90.dll" />
+    <Content Include="_VLFeat\bin\0.9.4.1\msvcp90.dll" />
+    <Content Include="_VLFeat\bin\0.9.4.1\msvcr90.dll" />
+    <Content Include="_VLFeat\bin\0.9.4.1\sift.exe" />
+    <Content Include="_VLFeat\bin\0.9.4.1\test_getopt_long.exe" />
+    <Content Include="_VLFeat\bin\0.9.4.1\test_host.exe" />
+    <Content Include="_VLFeat\bin\0.9.4.1\test_imopv.exe" />
+    <Content Include="_VLFeat\bin\0.9.4.1\test_mathop.exe" />
+    <Content Include="_VLFeat\bin\0.9.4.1\test_nan.exe" />
+    <Content Include="_VLFeat\bin\0.9.4.1\test_rand.exe" />
+    <Content Include="_VLFeat\bin\0.9.4.1\test_stringop.exe" />
+    <Content Include="_VLFeat\bin\0.9.4.1\vl.dll" />
+    <Content Include="_VLFeat\bin\0.9.4.1\vl.exp" />
+    <Content Include="_VLFeat\bin\0.9.4.1\vl.lib" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

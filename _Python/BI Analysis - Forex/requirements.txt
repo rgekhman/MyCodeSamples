@@ -1,0 +1,9 @@
+numpy
+matplotlib
+pandas_datareader
+pandas
+configparser
+argparse
+arrow
+v20
+pyyaml

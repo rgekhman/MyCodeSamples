@@ -1,0 +1,2 @@
+Since PEP3101, every object can have its own format used automatically by the method format of any string. 
+In the case of the datetime, the format is the same used in strftime. So you can do the same as above like this:

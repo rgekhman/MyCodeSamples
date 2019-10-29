@@ -1,0 +1,30 @@
+CASE 1: 
+
+Output: 
+Bucket,Quotes,Views,'Viewer Quotes Index'
+Baseline,32,595,0.054
+Variation 1,30,599,0.05
+Variation 2,18,622,0.029
+Variation 3,51,606,0.084
+Variation 4,38,578,0.066
+
+CASE 2: 
+Assume avg N of form views per viewer = 0.75
+
+Output: 
+Bucket,Quotes,Views,'Viewer Quotes Index'
+Baseline,32,595,0.04
+Variation 1,30,599,0.038
+Variation 2,18,622,0.022
+Variation 3,51,606,0.063
+Variation 4,38,578,0.049
+
+CASE 3: 
+
+Output: 
+Bucket,Quotes,Views,'Viewer Quotes Index','Avg N of Views per Viewer'
+Baseline,32,595,0.321,5.96
+Variation 1,30,599,0.384,7.66
+Variation 2,18,622,0.032,1.12
+Variation 3,51,606,0.44,5.23
+Variation 4,38,578,0.496,7.55

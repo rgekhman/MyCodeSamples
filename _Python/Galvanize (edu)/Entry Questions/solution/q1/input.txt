@@ -1,0 +1,4 @@
+The Arbitrary Text Type of semantic type is one of the Text Format Types. 
+This type consists of an arbitrary text string of any length provided by the user. 
+The merge tool substitutes this arbitrary string into the templates specified in 
+the Value column of the ModuleSubstitution table. 

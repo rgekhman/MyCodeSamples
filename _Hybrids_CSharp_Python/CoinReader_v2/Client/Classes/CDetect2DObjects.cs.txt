@@ -1,0 +1,116 @@
+﻿using System;
+using System.Drawing;
+using System.Linq;
+using Emgu.CV;
+using Emgu.CV.CvEnum;
+using Emgu.CV.Features2D;
+using Emgu.CV.Structure;
+using Emgu.CV.UI;
+using Emgu.CV.Util;
+
+
+namespace CoinReader.Classes
+{
+    class CDetect2DObjects
+    {
+        public void detect2DFeatures(string modelImageFile, string sceneImageFile)
+        {
+            using (var modelImage = new Image<Gray, byte>(modelImageFile))
+            {
+                var surfDetector = new SURFDetector(400, false);
+                var imageFeatures = surfDetector.DetectFeatures(modelImage, null);
+
+                using (var imageWithFeatures = new Image<Gray, byte>(modelImage.Bitmap))
+                {
+                    var font = new MCvFont(FONT.CV_FONT_HERSHEY_PLAIN, 1, 1);
+
+                    foreach (var imageFeature in imageFeatures)
+                    {
+                        imageWithFeatures.Draw("x", ref font,
+                            new Point((int)imageFeature.KeyPoint.Point.X,
+                                (int)imageFeature.KeyPoint.Point.Y),
+                            new Gray());
+                    }
+                    using (var sceneImage = new Image<Gray, byte>(sceneImageFile))
+                    {
+                        var sceneFeatures = surfDetector.DetectFeatures(sceneImage, null);
+
+                        #region Compute Descriptors
+                        var modelKeypoints = new VectorOfKeyPoint();
+
+                        modelKeypoints.Push(imageFeatures.Select(feature => feature.KeyPoint).ToArray());
+
+                        Matrix<float> modelDescriptors = surfDetector.ComputeDescriptorsRaw(modelImage, null,
+                            modelKeypoints);
+
+                        var sceneKeypoints = new VectorOfKeyPoint();
+
+                        sceneKeypoints.Push(sceneFeatures.Select(feature => feature.KeyPoint).ToArray());
+
+                        Matrix<float> sceneDescriptors = surfDetector.ComputeDescriptorsRaw(sceneImage, null,
+                            sceneKeypoints);
+                        #endregion
+
+                        #region Matching
+                        BruteForceMatcher<float> matcher = new BruteForceMatcher<float>(DistanceType.L2);
+
+                        matcher.Add(modelDescriptors);
+
+                        var indicesMatrix = new Matrix<int>(sceneDescriptors.Rows, 2);
+
+                        Matrix<byte> mask;
+
+                        using (Matrix<float> distanceMatrix = new Matrix<float>(sceneDescriptors.Rows, 2))
+                        {
+                            matcher.KnnMatch(sceneDescriptors, indicesMatrix, distanceMatrix, 2, null);
+
+                            mask = new Matrix<byte>(distanceMatrix.Rows, 1);
+
+                            mask.SetValue(255);
+                        }
+
+                        Features2DToolbox.VoteForSizeAndOrientation(modelKeypoints, sceneKeypoints,
+                            indicesMatrix, mask, 1.5, 20);
+                        #endregion
+
+                        #region Homography Matrix Calculation
+                        var homographyMatrix =
+                            Features2DToolbox.GetHomographyMatrixFromMatchedFeatures(modelKeypoints,
+                                sceneKeypoints, indicesMatrix, mask, 2);
+                        #endregion
+
+                        #region Marking Detected Result
+                        if (homographyMatrix != null)
+                        {
+                            var rectangle = modelImage.ROI;
+                            PointF[] polygonPoints =
+                            {
+                                new PointF(rectangle.Left, rectangle.Bottom),
+                                new PointF(rectangle.Right, rectangle.Bottom),
+                                new PointF(rectangle.Right, rectangle.Top),
+                                new PointF(rectangle.Left, rectangle.Top)
+                            };
+
+                            homographyMatrix.ProjectPoints(polygonPoints);
+
+                            using (var detectedObjectImage = new Image<Bgr, Byte>(sceneImage.Bitmap))
+                            {
+                                detectedObjectImage.DrawPolyline(
+                                    Array.ConvertAll(polygonPoints, Point.Round), true,
+                                    new Bgr(Color.DarkRed), 10);
+
+                                using (var scaledDownImage =
+                                    detectedObjectImage.Resize(detectedObjectImage.Height / 4,
+                                        detectedObjectImage.Width / 4, INTER.CV_INTER_LINEAR))
+                                {
+                                    ImageViewer.Show(scaledDownImage);
+                                }
+                            }
+                        }
+                        #endregion
+                    }
+                }
+            }
+        }
+    }
+}
